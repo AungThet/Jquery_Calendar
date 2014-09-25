@@ -358,9 +358,9 @@
 				year_to_operate = parseInt($(this).text());
 				month_operate(year_to_operate);
 			});
-		});*/
+});*/
 
-		function create_month(){
+function create_month(){
 			//get header
 			var month_container = $('<div>',{class:'month_container'});
 			var month_row = $('<div>',{class:'month_row'});
@@ -420,20 +420,15 @@
 			});
 		}
 
-		/*$('.cal_header_month').click(function(){
-			var got_year = parseInt($(this).siblings('.cal_header_year').text());
-			month_operate(got_year);
-		});*/
+function GetMonthName(monthNumber) {
+	var months = ['January', 'February', 'March', 'April', 'May', 'June',
+	'July', 'August', 'September', 'October', 'November', 'December'];
+	return months[monthNumber-1];
+}
 
-	function GetMonthName(monthNumber) {
-		var months = ['January', 'February', 'March', 'April', 'May', 'June',
-		'July', 'August', 'September', 'October', 'November', 'December'];
-		return months[monthNumber-1];
-	}
-
-	function parseMonth(month){
-		return new Date(Date.parse(month +" 1, 2012")).getMonth();
-	}
+function parseMonth(month){
+	return new Date(Date.parse(month +" 1, 2012")).getMonth();
+}
 
 function operate(date){
 	console.log(date);
@@ -449,10 +444,10 @@ function operate(date){
 			var year = date.getFullYear();
 			var number=1;
 			var next_month = false;
-			date.setMonth(month+1);//current month
+			date.setMonth(month-1);//current month
 			date.setDate(0);//prev's month's last date
-			var next_total_day = date.getDate();
-			var before_number = next_total_day-start_index+1;
+			var prev_total_day = date.getDate();
+			var before_number = prev_total_day-start_index+1;
 			$('.cal_dates').removeClass('today');
 			$('.date_content').removeClass('prev_month_text next_month_text' );
 			$.each($('.current_month .cal_dates_row .cal_dates'),function(p_day,p_value){
@@ -477,77 +472,79 @@ function operate(date){
 			});
 
 		}
-do_click();
-function do_click(){
-	$('.prev_button').click(function(){
-			var b_date = new Date();
-			var b_month = parseMonth($('.cal_header_month').text());
-			var b_year =parseInt($('.cal_header_year').text());
-			if(b_month==0 || b_month == 12){
-				b_year = b_year - 1;
-			}
-			if(b_month<1){
-				b_month =12;
-			}
-			b_month = b_month-1;
-			b_date.setDate(1);
-			b_date.setMonth(b_month);
-			b_date.setYear(b_year);
-			operate(b_date);
-		});
-		$('.next_button').click(function(){
-			var b_date = new Date();
-			var b_month = parseMonth($('.cal_header_month').text());
-			var b_year =parseInt($('.cal_header_year').text());
-			if(b_month==11){
-				b_year = b_year + 1;
-			}
-			if(b_month>12){
-				b_month =1;
-			}
-			b_month = b_month+1;
-			b_date.setDate(1);
-			b_date.setMonth(b_month);
-			b_date.setYear(b_year);
-			operate(b_date);
-		});
-		$('.cal_header_year').click(function(){
-			clear();
-			var year_to_operate,month_to_operate;
-			var header = create_header();
-			var created_year = create_year();
 
-			$('#cal_container').append(header,created_year);
-			
-			var got_year = parseInt($(this).text());
-			year_title_content(got_year);	
+		do_click();
 
+		function do_click(){
 			$('.prev_button').click(function(){
-				var got_year = parseInt($('.header_content').text().split(' '))-12;
-				if(got_year<1900){
-					got_year = 1900;
+				var b_date = new Date();
+				var b_month = parseMonth($('.cal_header_month').text());
+				var b_year =parseInt($('.cal_header_year').text());
+				if(b_month==0 || b_month == 12){
+					b_year = b_year - 1;
 				}
-				year_title_content(got_year);
+				if(b_month<1){
+					b_month =12;
+				}
+				b_month = b_month-1;
+				b_date.setDate(1);
+				b_date.setMonth(b_month);
+				b_date.setYear(b_year);
+				operate(b_date);
 			});
-
 			$('.next_button').click(function(){
-				var got_year = parseInt($('.header_content').text().split(' '))+12;
-				if(got_year>2089){
-					got_year = 2089;
+				var b_date = new Date();
+				var b_month = parseMonth($('.cal_header_month').text());
+				var b_year =parseInt($('.cal_header_year').text());
+				if(b_month==11){
+					b_year = b_year + 1;
 				}
-				year_title_content(got_year);
+				if(b_month>12){
+					b_month =1;
+				}
+				b_month = b_month+1;
+				b_date.setDate(1);
+				b_date.setMonth(b_month);
+				b_date.setYear(b_year);
+				operate(b_date);
 			});
+			$('.cal_header_year').click(function(){
+				clear();
+				var year_to_operate,month_to_operate;
+				var header = create_header();
+				var created_year = create_year();
 
-			$('.years').click(function(){
-				year_to_operate = parseInt($(this).text());
-				month_operate(year_to_operate);
+				$('#cal_container').append(header,created_year);
+
+				var got_year = parseInt($(this).text());
+				year_title_content(got_year);	
+
+				$('.prev_button').click(function(){
+					var got_year = parseInt($('.header_content').text().split(' '))-12;
+					if(got_year<1900){
+						got_year = 1900;
+					}
+					year_title_content(got_year);
+				});
+
+				$('.next_button').click(function(){
+					var got_year = parseInt($('.header_content').text().split(' '))+12;
+					if(got_year>2089){
+						got_year = 2089;
+					}
+					year_title_content(got_year);
+				});
+
+				$('.years').click(function(){
+					year_to_operate = parseInt($(this).text());
+					month_operate(year_to_operate);
+				});
 			});
-		});
-		$('.cal_header_month').click(function(){
-			var got_year = parseInt($(this).siblings('.cal_header_year').text());
-			month_operate(got_year);
-		});
-}
+			$('.cal_header_month').click(function(){
+				var got_year = parseInt($(this).siblings('.cal_header_year').text());
+				month_operate(got_year);
+			});
+		}
 		
 	})(jQuery);
 </script>
