@@ -1,0 +1,581 @@
+<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml" xml:lang="ja" lang="ja">
+<html>
+<meta http-equiv="content-type" content="text/html; charset=UTF-8">
+<meta charset="UTF-8">
+<head>
+  <title>Sundew</title>
+  <link rel="stylesheet" href="common.css">
+  <link rel="stylesheet" href="template.css">
+  <link rel="stylesheet" href="main.css">
+  <script src="scripts/jquery-2.0.2.min.js"></script>
+ <script>
+ (function(){
+$(window).resize(function(){
+    if($(window).width()<900){
+    $('#rightSideBlk').css({
+        'margin-top':'900px',
+        'padding-left':'5px',
+        'float':'none'
+    });
+
+    $('#blkPictures').css({
+        'margin-top' : '400px'
+    });
+}
+else{
+     $('#rightSideBlk').css({
+        'margin-top':'',
+        'padding-left':'',
+        'float':''
+    });
+
+    $('#blkPictures').css({
+        'margin-top' : ''
+    })
+}
+});
+ })();
+ $(document).ready(function(){
+  if($(window).width()<900){
+    $('#rightSideBlk').css({
+        'margin-top':'900px',
+        'padding-left':'5px',
+        'float':'none'
+    });
+
+    $('#blkPictures').css({
+        'margin-top' : '400px'
+    })
+}
+ });
+ </script>
+</head>
+<body>
+   <script type="text/javascript">
+        $(document).ready(function(){
+            $("#blkPictureBlock > img").hide();
+                       $("#jimage12").click(function(){
+                           $("#blkPictureBlock > img").hide();
+                           $("#simage12").show();
+                       });
+                       $("#jimage14").click(function(){
+                           $("#blkPictureBlock > img").hide();
+                           $("#simage14").show();
+                       });
+                       $("#jimage13").click(function(){
+                           $("#blkPictureBlock > img").hide();
+                           $("#simage13").show();
+                       });
+                       $("#jimage20").click(function(){
+                           $("#blkPictureBlock > img").hide();
+                           $("#simage20").show();
+                       });
+               
+           });
+</script>
+
+            <div id="main">
+                <div id="funcButtonArea">
+                    <div id="messageArea">
+                        　
+                    </div>
+                    <div id="registButtonArea">
+                        　
+                    </div>
+                    <div id="returnButtonArea">
+                            <div id="returnButton" class="btn-cyan">
+                                <a action="index" class="btn-link" href="/block/index">戻る</a>
+                            </div>
+                    </div>
+                </div>
+                <div id="leftSideBlk">
+                    <div id="blkBasicInfo">
+                        <div id="blkBasicInfoTitle">
+                            <b>ブロック基本情報</b>
+                        </div>
+                        <div id="blkBasicInfoTable">
+                            <div id="shelfNumTable">
+                                <table>
+                                    <colgroup><col class="shelfNoTitleCol">
+                                    <col class="colorValue">
+                                    <col class="shelfColTitleCol">
+                                    <col class="colorValue">
+                                    <col class="shelfRowTitleCol">
+                                    <col class="colorValue">
+                                    </colgroup><thead>
+                                    </thead>
+                                    <tbody>
+                                        <tr>
+                                            <th>棚名
+                                            </th><td class="strCenter">棚1</td>
+                                            <th>棚行
+                                            </th><td class="numCenter">1</td>
+                                            <th>棚列
+                                            </th><td class="numCenter">1</td>
+                                            <th>利用状態
+                                            </th><td class="numCenter">
+                                                使用中
+                                            </td>
+                                        </tr>
+                                    </tbody>
+                                </table>
+                            </div>
+                            
+                        
+                        </div>
+                    </div>
+                    <div id="ledSetHistory">
+                    <div id="ledSetHistoryTitle" style="margin-top: 10px;">
+                            <b>ＬＥＤ設定履歴</b>
+                    </div>
+                        <div id="ledSetHistoryDetailTable">
+                           <table id="ledtable">
+                                <colgroup><col class="plantNameCol">
+                                <col class="plantNameCol">
+                                <col class="colorValue">
+                                <col class="colorValue">
+                                <col class="colorValue">
+                                <col class="colorValue">
+                                <col class="colorValue">
+                                <col class="colorValue">
+                                <col class="shelfNoTitleCol">
+                                </colgroup><thead>
+                                    <tr>
+                                    <th rowspan="2">
+                                            設定名（色/時間）
+                                        </th>
+                                        <th rowspan="2">
+                                            開始日時
+                                        </th>
+                                        <th colspan="3">
+                                            duty比
+                                        </th>
+                                        <th colspan="3">
+                                            光量子量
+                                        </th>
+                                        <th rowspan="2">点灯状態</th>
+                                        
+                                    </tr>
+                                    <tr>
+                                        <th>赤    
+                                        </th><th>緑
+                                        </th><th>青
+                                        </th><th>赤    
+                                        </th><th>緑
+                                        </th><th>青
+                                    </th></tr>
+                                </thead>
+                                <tbody>
+                                    <tr>
+                                        <td class="numCenter">黄色40/8h</td>
+                                        <td class="numRight">2014/10/01 12:00</td>
+                                        <td class="numRight">6.0</td>
+                                        <td class="numRight">74.0</td>
+                                        <td class="numRight">25.0</td>
+                                        <td class="numRight">1.0</td>
+                                        <td class="numRight">77.0</td>
+                                        <td class="numRight">43.0</td>
+                                        <td class="strCenter">設定中</td>
+                                        
+                                    </tr>
+                                    <tr>
+                                        <td class="numCenter">黄色50/8h</td>
+                                        <td class="numRight">2014/10/02 12:00</td>
+                                        <td class="numRight">97.0</td>
+                                        <td class="numRight">46.0</td>
+                                        <td class="numRight">11.0</td>
+                                        <td class="numRight">11.0</td>
+                                        <td class="numRight">47.0</td>
+                                        <td class="numRight">30.0</td>
+                                        <td class="strCenter">終了</td>
+                                        
+                                    </tr>
+                                    <tr>
+                                        <td class="numCenter">黄色60/8h</td>
+                                        <td class="numRight">2014/10/03 12:00</td>
+                                        <td class="numRight">17.0</td>
+                                        <td class="numRight">81.0</td>
+                                        <td class="numRight">78.0</td>
+                                        <td class="numRight">70.0</td>
+                                        <td class="numRight">31.0</td>
+                                        <td class="numRight">12.0</td>
+                                        <td class="strCenter">終了</td>
+                                        
+                                    </tr>
+                                </tbody>
+                        </table>
+                        </div>
+                        </div>
+                    <div id="blkEnvInfo" style="margin-top: 70px;">
+                        <div id="btlPlaceInfoTitle">
+                            <b>ボトル配置状況</b>
+                        </div>
+                        <div id="btlPlaceInfoTable">
+                            <table>
+                                <colgroup><col class="shelfRowTitleCol">
+                                <col class="shelfRowTitleCol">
+                                <col class="btlRegistTitleCol">
+                                <col class="registDataBledCol">
+                                <col class="dateTimeCol">
+                                </colgroup><thead>
+                                <tr>
+                                    <th>列</th>
+                                    <th>行</th>
+                                    <th>ボトル番号</th>
+                                    <th>植物名</th>
+                                    <th>配置日</th>
+                                    
+                                </tr>
+                                </thead>
+                                <tbody>
+                                <tr>
+                                    <td class="numCenter">1</td>
+                                    <td class="numCenter">1</td>
+                                    <td><a href="/bottle/show?class=strCenter">N0002</a></td>
+                                    <td class="strCenter">○○ゴケ</td>
+                                    <td class="strCenter">2014/09/02</td>
+                                </tr>
+                                <tr>
+                                    <td class="numCenter">1</td>
+                                    <td class="numCenter">1</td>
+                                    <td><a href="/bottle/show?class=strCenter">E0033</a></td>
+                                    <td class="strCenter">○○ゴケ</td>
+                                    <td class="strCenter">2014/09/02</td>
+                                </tr>
+                                <tr>
+                                    <td class="numCenter">1</td>
+                                    <td class="numCenter">1</td>
+                                    <td><a href="/bottle/show?class=strCenter">L0025</a></td>
+                                    <td class="strCenter">○○ゴケ</td>
+                                    <td class="strCenter">2014/09/02</td>
+                                </tr>
+                                <tr>
+                                    <td class="numCenter">1</td>
+                                    <td class="numCenter">1</td>
+                                    <td><a href="/bottle/show?class=strCenter">A0037</a></td>
+                                    <td class="strCenter">○○ゴケ</td>
+                                    <td class="strCenter">2014/09/02</td>
+                                </tr>
+                                <tr>
+                                    <td class="numCenter">1</td>
+                                    <td class="numCenter">1</td>
+                                    <td><a href="/bottle/show?class=strCenter">N0029</a></td>
+                                    <td class="strCenter">○○ゴケ</td>
+                                    <td class="strCenter">2014/09/02</td>
+                                </tr>
+                                <tr>
+                                    <td class="numCenter">1</td>
+                                    <td class="numCenter">1</td>
+                                    <td><a href="/bottle/show?class=strCenter">S0035</a></td>
+                                    <td class="strCenter">○○ゴケ</td>
+                                    <td class="strCenter">2014/09/02</td>
+                                </tr>
+                                <tr>
+                                    <td class="numCenter">1</td>
+                                    <td class="numCenter">1</td>
+                                    <td><a href="/bottle/show?class=strCenter">M0028</a></td>
+                                    <td class="strCenter">○○ゴケ</td>
+                                    <td class="strCenter">2014/09/02</td>
+                                </tr>
+                                <tr>
+                                    <td class="numCenter">1</td>
+                                    <td class="numCenter">1</td>
+                                    <td><a href="/bottle/show?class=strCenter">J0047</a></td>
+                                    <td class="strCenter">○○ゴケ</td>
+                                    <td class="strCenter">2014/09/02</td>
+                                </tr>
+                                <tr>
+                                    <td class="numCenter">1</td>
+                                    <td class="numCenter">1</td>
+                                    <td><a href="/bottle/show?class=strCenter">J0042</a></td>
+                                    <td class="strCenter">○○ゴケ</td>
+                                    <td class="strCenter">2014/09/02</td>
+                                </tr>
+                                </tbody>
+                            </table>
+                        </div>
+                    </div>
+                    
+                    <div id="blkEnvInfo" style="margin-top:40px;">
+                        <div id="blkEnvInfoTitle">
+                        
+                        <b>期間：10/1</b>&nbsp;&nbsp;
+                            <b><a href="/block/show/1?lastprevious=true">&lt;&lt;</a></b>
+                            <b><a href="/block/show/1?previous=true">＜前</a></b>
+                            <b><a href="/block/show/1?next=true">次＞</a></b>
+                            <b><a href="/block/show/1?beforenext=true">&gt;&gt;</a></b>&nbsp;&nbsp;
+                            &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+                            <b><a href="/block/show/1?graph_opt=1">日別</a> <a href="/block/show/1?graph_opt=2">週</a> <a href="/block/show/1?graph_opt=3">月</a> <a href="/block/show/1?graph_opt=5">3ケ月</a><a href="/block/show/1?graph_opt=6">半年</a>
+                            </b>
+
+                        </div>
+                    <div id="blkEnvGraph">
+                            <img alt="Chart?chxl=0" src="http://chart.apis.google.com/chart?chxl=0:|07|08|09|1:|0|500|1000|1500|2000|2500|3000|2:|20.0|22.0|24.0|26.0|28.0|30.0&amp;chxt=x,y,r&amp;chco=a9dada,aedaa9,daaea9,dadaa9,a9a9da&amp;chd=s:BBBBBBBBBBBBBBBBBBBBBB,UUffppzz9K9KDEBCCEECEB&amp;chtt=2014-09-30&amp;cht=lc&amp;chs=445x248&amp;chxr=0,0,8064,2688|1,0">
+                    </div>
+                    <div id="blkPictures" style="margin-top:50px;">
+                        <div id="blkPicturesTitle">
+                            <b>ブロック写真</b>
+                        </div>
+                        <div id="blkEnvInfoHistoryTableHead">
+                            <table>
+                                <colgroup><col class="dateTimeCol">
+                                <col class="dateTimeCol">
+                                <col class="btlResistLeftDataCol">
+                                
+                                </colgroup><thead>
+                                    <tr>
+                                        <th>撮影日時
+                                        </th><th>ファイル名
+                                        </th><th>備考
+                                        
+                                    </th></tr>
+                                </thead>
+                            </table>
+                        </div>
+                        <div id="btlEnvInfoHistoryTableBody">
+                            <table>
+                                <colgroup><col class="dateTimeCol">
+                                <col class="dateTimeCol">
+                                <col class="btlResistLeftDataCol">
+                                
+                                </colgroup><tbody>
+                                    <tr id="jimage12">
+                                        <td class="strCenter"><a href="/block/show/1">2014-09-11</a></td>
+                                        <td class="strCenter">Sunset.jpg</td>
+                                        <td class="strLeft">
+                                            Sunset note</td>
+                                        
+                                    </tr>
+                                    <tr id="jimage14">
+                                        <td class="strCenter"><a href="/block/show/1">2014-09-19</a></td>
+                                        <td class="strCenter">Winter.jpg</td>
+                                        <td class="strLeft">
+                                            Winter note</td>
+                                        
+                                    </tr>
+                                    <tr id="jimage13">
+                                        <td class="strCenter"><a href="/block/show/1">2014-09-11</a></td>
+                                        <td class="strCenter">Blue hills.jpg</td>
+                                        <td class="strLeft">
+                                            Blue hill note</td>
+                                        
+                                    </tr>
+                                    <tr id="jimage20">
+                                        <td class="strCenter"><a href="/block/show/1">2014-09-26</a></td>
+                                        <td class="strCenter">image.jpg_7v15loxp</td>
+                                        <td class="strLeft">
+                                            Testing Image note</td>
+                                        
+                                    </tr>
+                                    
+                                </tbody><tbody>
+                                    
+                            </tbody></table>
+                        </div>
+                    </div>
+                </div>
+                </div>
+                    
+            
+                <div id="rightSideBlk">
+                    
+                    <div id="blkEnvInfo" style="margin-top: 605px;">
+                        <div id="blkEnvInfoHistoryTitle">
+                            <b>ブロック環境情報履歴</b>
+                        </div>
+                        <div id="blkEnvInfoHistoryTableHead">
+                            <table>
+                                 <colgroup><col class="dateTimeCol">
+                                <col class="measuredegreeCol">
+                                <col class="measureluxCol">
+                                <col class="dateCol">
+                                </colgroup><thead>
+                                    <tr>
+                                        <th>計測日時
+                                        </th><th>温度
+                                        </th><th>湿度
+                                        </th><th>状態
+                                    </th></tr>
+                                </thead>
+
+                            </table>
+                        </div>
+                    
+                        <div id="btlEnvInfoHistoryTableBody" class="scrollTable">
+                            <table>
+                                <colgroup><col class="dateTimeCol">
+                                <col class="measuredegreeCol">
+                                <col class="measureluxCol">
+                                <col class="targetstate">
+                             
+                                </colgroup><tbody>
+                                    <tr>
+                                        <td class="strRight">2014/09/16 04:12</td>
+                                        <td class="numRight">27.1°C</td>
+                                        <td class="numRight">400.0lux</td>
+                                        <td class="strCenter">
+                                            正常</td>
+                                    </tr>
+                                    <tr>
+                                        <td class="strRight">2014/09/15 04:12</td>
+                                        <td class="numRight">27.1°C</td>
+                                        <td class="numRight">400.0lux</td>
+                                        <td class="strCenter">
+                                            正常</td>
+                                    </tr>
+                                    <tr>
+                                        <td class="strRight">2014/09/23 06:12</td>
+                                        <td class="numRight">27.3°C</td>
+                                        <td class="numRight">47.0lux</td>
+                                        <td class="strCenter">
+                                            正常</td>
+                                    </tr>
+                                    <tr>
+                                        <td class="strRight">2014/09/23 06:12</td>
+                                        <td class="numRight">27.3°C</td>
+                                        <td class="numRight">1200.0lux</td>
+                                        <td class="strCenter">
+                                            正常</td>
+                                    </tr>
+                                    <tr>
+                                        <td class="strRight">2014/09/18 04:12</td>
+                                        <td class="numRight">27.2°C</td>
+                                        <td class="numRight">600.0lux</td>
+                                        <td class="strCenter">
+                                            異常</td>
+                                    </tr>
+                                    <tr>
+                                        <td class="strRight">2014/09/26 04:12</td>
+                                        <td class="numRight">29.0°C</td>
+                                        <td class="numRight">94.0lux</td>
+                                        <td class="strCenter">
+                                            正常</td>
+                                    </tr>
+                                    <tr>
+                                        <td class="strRight">2014/09/21 04:12</td>
+                                        <td class="numRight">27.5°C</td>
+                                        <td class="numRight">95.0lux</td>
+                                        <td class="strCenter">
+                                            異常</td>
+                                    </tr>
+                                    <tr>
+                                        <td class="strRight">2014/09/21 04:12</td>
+                                        <td class="numRight">27.5°C</td>
+                                        <td class="numRight">1000.0lux</td>
+                                        <td class="strCenter">
+                                            異常</td>
+                                    </tr>
+                                    <tr>
+                                        <td class="strRight">2014/09/20 04:12</td>
+                                        <td class="numRight">27.2°C</td>
+                                        <td class="numRight">49.0lux</td>
+                                        <td class="strCenter">
+                                            正常</td>
+                                    </tr>
+                                    <tr>
+                                        <td class="strRight">2014/09/20 04:12</td>
+                                        <td class="numRight">27.2°C</td>
+                                        <td class="numRight">800.0lux</td>
+                                        <td class="strCenter">
+                                            正常</td>
+                                    </tr>
+                                    <tr>
+                                        <td class="strRight">2014/09/24 04:12</td>
+                                        <td class="numRight">27.0°C</td>
+                                        <td class="numRight">200.0lux</td>
+                                        <td class="strCenter">
+                                            正常</td>
+                                    </tr>
+                                    <tr>
+                                        <td class="strRight">2014/09/25 04:12</td>
+                                        <td class="numRight">28.0°C</td>
+                                        <td class="numRight">200.0lux</td>
+                                        <td class="strCenter">
+                                            正常</td>
+                                    </tr>
+                                    <tr>
+                                        <td class="strRight">2014/09/24 05:12</td>
+                                        <td class="numRight">27.3°C</td>
+                                        <td class="numRight">1200.0lux</td>
+                                        <td class="strCenter">
+                                            正常</td>
+                                    </tr>
+                                    <tr>
+                                        <td class="strRight">2014/09/24 05:12</td>
+                                        <td class="numRight">27.3°C</td>
+                                        <td class="numRight">42.0lux</td>
+                                        <td class="strCenter">
+                                            正常</td>
+                                    </tr>
+                                    <tr>
+                                        <td class="strRight">2014/09/22 04:12</td>
+                                        <td class="numRight">27.4°C</td>
+                                        <td class="numRight">52.0lux</td>
+                                        <td class="strCenter">
+                                            正常</td>
+                                    </tr>
+                                    <tr>
+                                        <td class="strRight">2014/09/22 04:12</td>
+                                        <td class="numRight">27.4°C</td>
+                                        <td class="numRight">1000.0lux</td>
+                                        <td class="strCenter">
+                                            正常</td>
+                                    </tr>
+                                    <tr>
+                                        <td class="strRight">2014/09/19 04:12</td>
+                                        <td class="numRight">27.2°C</td>
+                                        <td class="numRight">800.0lux</td>
+                                        <td class="strCenter">
+                                            正常</td>
+                                    </tr>
+                                    <tr>
+                                        <td class="strRight">2014/09/17 04:12</td>
+                                        <td class="numRight">27.2°C</td>
+                                        <td class="numRight">600.0lux</td>
+                                        <td class="strCenter">
+                                            正常</td>
+                                    </tr>
+                                </tbody><tbody>
+                                    
+                            </tbody></table>
+                        </div>
+                    </div>
+
+
+                    <div id="blkEnvInfoTitle" style="margin-top:50px">
+                        <div id="blkPicturesTitle">
+                            <b>ブロック写真</b>
+                        </div>
+                        <div id="blkPictureBlock">                    
+                            <img style="display: none;" alt="Sunset" class="photoformatsize" id="simage12" src="/assets/Sunset.jpg">
+                            <img style="display: none;" alt="Bottle glh6hsvp" class="photoformatsize" id="simage21" src="/assets/bottle_glh6hsvp.jpg">
+                            <img style="display: none;" alt="Bottle g3ktciqa" class="photoformatsize" id="simage22" src="/assets/bottle_g3ktciqa.jpg">
+                            <img style="display: none;" alt="Bottle fonifc6n" class="photoformatsize" id="simage23" src="/assets/bottle_fonifc6n.jpg">
+                            <img style="display: none;" alt="Bottle kbh325bo" class="photoformatsize" id="simage24" src="/assets/bottle_kbh325bo.jpg">
+                            <img style="display: none;" alt="Bottle bmkw5puh" class="photoformatsize" id="simage25" src="/assets/bottle_bmkw5puh.jpg">
+                            <img style="display: none;" alt="Picture 1mth0vex" class="photoformatsize" id="simage26" src="/assets/picture_1mth0vex.jpg">
+                            <img style="display: none;" alt="Winter" class="photoformatsize" id="simage14" src="/assets/Winter.jpg">
+                            <img style="display: none;" alt="Blue hills" class="photoformatsize" id="simage13" src="/assets/Blue hills.jpg">
+                            <img style="display: none;" alt="Image" class="photoformatsize" id="simage20" src="/assets/image.jpg_7v15loxp">
+                            <img style="display: none;" alt="Picture dad9mdca" class="photoformatsize" id="simage27" src="/assets/picture_dad9mdca.jpg">
+                            <img style="display: none;" alt="Picture epz1i5ui" class="photoformatsize" id="simage28" src="/assets/picture_epz1i5ui.jpg">
+                            <img style="display: none;" alt="Picture 77zaa56b" class="photoformatsize" id="simage30" src="/assets/picture_77zaa56b.jpg">
+                            <img style="display: none;" alt="Picture pg6slh1f" class="photoformatsize" id="simage31" src="/assets/picture_pg6slh1f.jpg">
+                            <img style="display: none;" alt="Picture 7jumh5di" class="photoformatsize" id="simage32" src="/assets/picture_7jumh5di.jpg">
+                            <img style="display: none;" alt="Picture eomqcn5x" class="photoformatsize" id="simage33" src="/assets/picture_eomqcn5x.jpg">
+                            <img style="display: none;" alt="Picture appc18rs" class="photoformatsize" id="simage34" src="/assets/picture_appc18rs.jpg">
+                            <img style="display: none;" alt="Picture 8vaf8l6o" class="photoformatsize" id="simage35" src="/assets/picture_8vaf8l6o.jpg">
+                            <img style="display: none;" alt="Picture tav5lduv" class="photoformatsize" id="simage36" src="/assets/picture_tav5lduv.jpg">
+                            <img style="display: none;" alt="Picture rudlw4sw" class="photoformatsize" id="simage37" src="/assets/picture_rudlw4sw.jpg">
+                            <img style="display: none;" alt="Picture 969h2ybc" class="photoformatsize" id="simage38" src="/assets/picture_969h2ybc.jpg">
+                            <img style="display: none;" alt="Picture dputymow" class="photoformatsize" id="simage39" src="/assets/picture_dputymow.jpg">
+                            <img style="display: none;" alt="Picture n1mp6v5j" class="photoformatsize" id="simage40" src="/assets/picture_n1mp6v5j.jpg">
+                        </div>
+                    </div>
+
+                </div>
+            </div>
+
+</body>
+</html>

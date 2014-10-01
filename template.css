@@ -1,0 +1,71 @@
+﻿/* テンプレートの書式設定 */
+
+/** コンテナ定義 **/
+#container{
+	width:1024px;
+}
+
+/*** ヘッダの書式定義 ***/
+#header {
+	width:1020px;
+	height:100px;
+	padding-left:2px;
+	padding-right:2px;
+}
+
+/**** システムタイトルの書式設定 ****/
+#systemTitle {
+	height:30px;
+	width:350px;
+	margin:5px;
+	font-weight: bold;
+	font-size:24px;
+	float:left;
+}
+
+
+/**** システムタイトルの書式設定 ****/
+#loginInfo {
+	height:18px;
+	width:640px;
+	margin:5px;
+	padding-top:12px;
+	font-size:12px;
+	float:left;
+}
+
+/***** 氏名の書式設定 *****/
+#userName {
+	width: 180px;
+	float: left;
+}
+
+/***** ロールの書式設定 *****/
+#roleName {
+	width: 100px;
+	float: left;
+}
+
+/***** ログイン時間の書式設定 *****/
+#loginTime {
+	width: 200px;
+	float: left;
+}
+
+/***** ログアウトの書式設定 *****/
+#logout {
+	width: 160px;
+	text-align: right;
+	float: left;
+}
+
+/*** 機能タイトルの書式設定 ***/
+#screenTitle {
+	clear: both;
+	padding: 5px;
+	font-size: 18px;
+	font-weight: bold;
+	height: 25px;
+	width: 1020px;
+	background-color: #FFC;
+}

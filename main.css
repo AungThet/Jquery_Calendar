@@ -1,0 +1,991 @@
+﻿/*---------------- エリア定義 ----------------*/
+/*---------------- area definition ----------------*/
+/* メインエリア定義 */
+/* definition in the main area  */
+#main {
+	clear: both;
+	width: 1020px;
+	padding-left:2px;
+	padding-right:2px;
+}
+
+/* 機能ボタンエリア */
+#funcButtonArea {
+	width: 1010px;
+	height: 40px;
+	margin: 0px 5px 0px;
+	
+}
+
+/* メッセージエリア */
+#messageArea {
+	width: 800px;
+	float: left;
+}
+
+/* 登録ボタンエリア */
+#registButtonArea {
+	width: 120px;
+	float: left;
+}
+
+/* 登録ボタン */
+#registButton {
+	width:80px;
+	height:30px;
+}
+
+/* 新規登録ボタンエリア */
+#newRegistButtonArea {
+	width: 120px;
+	float: left;
+}
+
+/* 新規登録ボタン */
+#newRegistButton {
+	width:80px;
+	height:20px;
+}
+
+/* 検索ボタンエリア */
+#searchButtonArea {
+	width: 120px;
+	float: left;
+}
+
+/* 検索ボタン */
+#searchButton {
+	width:80px;
+	height:20px;
+}
+
+/* 更新ボタンエリア */
+#updateButtonArea {
+	width: 120px;
+	float: left;
+}
+
+/* 更新ボタン */
+#updateButton {
+	width:80px;
+	height:20px;
+}
+
+/* 戻るボタンエリア */
+#returnButtonArea {
+	width: 80px;
+	float: left;
+}
+
+/* 戻るボタン */
+#returnButton {
+	width:80px;
+	height:20px;
+}
+
+
+/* エリア分割なし */
+/* No area division */
+#standard {
+	width: 1010px;
+	margin: 0px 5px 0px;
+}
+
+/* エリア２分割（通常） */
+/* divide into 2 areas (standard) */
+.standard2Left {
+	float: left;
+	width: 250px;
+	margin 0px 5px 0px;
+}
+.standard2Right {
+	float: left;
+	width: 940px;
+	margin 0px 5px 0px;
+}
+
+/* エリア３分割（通常） */
+/* divide into 3 areas (standard) * /
+.standard3Left {
+	float: left;
+	width: 240px;
+	margin-right: 10px;
+	margin: 0px 5px 0px;
+}
+
+.standard3Center {
+	float: left;
+	width: auto;
+	margin-right: 10px;
+	clear: both;
+}
+.standard3Right {
+	float: left;
+	width: 240px;
+}
+
+/*--------------- 列設定 ---------------*/
+/*--------------- Column settings ---------------*/
+
+/*--------------- リンク・ボタン設定 ---------------*/
+/*--------------- link settings ---------------*/
+/* ボタン共通 */
+/* common of button */
+.btn-cyan {
+	color: #000;
+	background: #b3dced;
+	background: -moz-linear-gradient(top, #b3dced 0%, #29b8e5 50%, #bce0ee 100%);
+	background: -webkit-gradient(left top, left bottom, color-stop(0%, #b3dced), color-stop(50%, #29b8e5), color-stop(100%, #bce0ee));
+	background: -webkit-linear-gradient(top, #b3dced 0%, #29b8e5 50%, #bce0ee 100%);
+	background: linear-gradient(to bottom, #b3dced 0%, #29b8e5 50%, #bce0ee 100%);
+	filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#b3dced', endColorstr='#bce0ee', GradientType=0 );
+	padding: 3px;
+	border: 1px solid #0000FF;
+	border-color: #1178BC;
+	border-radius: 5px;
+	text-align: center;
+	text-decoration: none;
+	margin-top: 3px;
+	font-size: 10pt;
+}
+.btn-cyan:hover {
+	background: #b3dced;
+	background: -moz-linear-gradient(bottom, #b3dced 0%, #29b8e5 100%, #bce0ee 50%);
+	background: -webkit-gradient(right bottom, right top, color-stop(0%, #b3dced), color-stop(100%, #29b8e5), color-stop(50%, #bce0ee));
+	background: -webkit-linear-gradient(bottom, #b3dced 0%, #29b8e5 100%, #bce0ee 50%);
+	background: linear-gradient(to top, #b3dced 0%, #29b8e5 100%, #bce0ee 50%);
+	filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#b3dced', endColorstr='#bce0ee', GradientType=0 );
+}
+
+.btn-link{
+	text-decoration:none;
+}
+
+/* 登録ボタン */
+/* button of register */
+.btn-register{
+	display: inline-block;
+	text-decoration: none;
+	text-align: center;
+	margin-top: 3px;
+	width: 60px;
+	padding: 6px 3px 3px 3px;
+	height: 20px;
+	font-size: 14px;
+	font-family: "ヒラギノ角ゴ Pro W3";
+}
+
+/* 更新ボタン */
+/* button of update */
+.btn-update{
+	display: inline-block;
+	text-decoration: none;
+	text-align: center;
+	margin-top: 3px;
+	width: 60px;
+	padding: 6px 3px 3px 3px;
+	height: 20px;
+	font-size: 14px;
+	font-family: "ヒラギノ角ゴ Pro W3";
+}
+
+/* 戻るボタン */
+/* button of return */
+.btn-return{
+	display: inline-block;
+	text-decoration: none;
+	text-align: center;
+	margin-top: 3px;
+	width: 60px;
+	padding: 6px 3px 3px 3px;
+	height: 20px;
+	font-size: 14px;
+	font-family: "ヒラギノ角ゴ Pro W3";
+}
+
+/* submitボタン */
+/* button of submit */
+.btn-submit{
+	margin-top: 3px;
+	font-size: 14px;
+	font-family: "ヒラギノ角ゴ Pro W3";
+	padding: 5px 3px 3px 3px;
+	width: 60px;
+	height: 31px;
+}
+
+/* タブ設定（非アクティブ） */
+.tab-inactive {
+	display: block;
+	background-image: -o-linear-gradient(bottom, #2793BA 17%, #86D6E0 73%);
+	background-image: -moz-linear-gradient(bottom, #2793BA 17%, #86D6E0 73%);
+	background-image: -webkit-linear-gradient(bottom, #2793BA 17%, #86D6E0 73%);
+	background-image: -ms-linear-gradient(bottom, #2793BA 17%, #86D6E0 73%);
+	background-image: linear-gradient(to bottom, #2793BA 17%, #86D6E0 73%);
+	border-width: 1px 1px 5px 1px;
+	border-style: solid;
+	border-color: #2793BA;
+	border-radius: 10px 10px 0px 0px;
+	text-align: center;
+	text-decoration: none;
+	float: left;
+	color: #FFF;
+	font-size: 11pt;
+}
+
+/* タブ設定（アクティブと非アクティブじのマウスオーバー） */
+.tab-inactive:hover, .tab-visited {
+	display: block;
+	background-image: -o-linear-gradient(top, #2793BA 17%, #86D6E0 73%);
+	background-image: -moz-linear-gradient(top, #2793BA 17%, #86D6E0 73%);
+	background-image: -webkit-linear-gradient(top, #2793BA 17%, #86D6E0 73%);
+	background-image: -ms-linear-gradient(top, #2793BA 17%, #86D6E0 73%);
+	background-image: linear-gradient(to top, #2793BA 17%, #86D6E0 73%);
+	border-width: 1px 1px 5px 1px;
+	border-style: solid;
+	border-color: #2793BA;
+	border-radius: 10px 10px 0px 0px;
+	text-align: center;
+	text-decoration: none;
+	float: left;
+	color: #FFF;
+	font-size: 11pt;
+}
+
+
+
+/*---------------- 画面別設定 ----------------*/
+/*---------------- Setting of each screen ----------------*/
+/****************/
+/*** ログイン ***/
+/****************/
+
+/* ユーザパスワードエリア */
+#userPassArea {
+	width:300px;
+	float:left;
+}
+
+/* ユーザ名キャプションエリア */
+#userNameCap {
+	width:100px;
+	height:25px;
+	float:left;
+}
+
+/* ユーザ名テキストボックスエリア */
+#userNameText {
+	width:200px;
+	height:25px;
+	float:left;
+}
+
+/* パスワードキャプションエリア */
+#passwordCap {
+	clear:both;
+	width:100px;
+	height:25px;
+	float:left;
+}
+
+/* パスワードテキストボックスエリア */
+#passwordText {
+	width:200px;
+	height:25px;
+	float:left;
+}
+
+/* ログインボタンエリア */
+#loginButtonArea {
+	width:100px;
+	height:50px;
+	float:left;
+}
+
+/* ログインボタン */
+#loginButton {
+	width:80px;
+	height:20px;
+}
+
+/****************/
+/*** メニュー ***/
+/****************/
+
+/* メニューテーブル */
+.menuTable {
+}
+
+/* 利用可能な機能 */
+.availableFunc {
+	width:200px;
+}
+
+/* 機能説明 */
+.functionDesc {
+	width:500px;
+}
+
+/* メニューテーブルの全行 */
+.menuTable tr {
+	height: 50px;
+}
+
+/* メニューテーブルの全セル */
+.menuTable td {
+	padding: 5px;
+}
+
+/*****************/
+/*** LED色設定 ***/
+/*****************/
+
+/* メニューテーブル */
+.listTable {
+}
+
+/* 色設定名 */
+.colorName {
+	width:150px;
+}
+
+/* 色の値 */
+.colorValue {
+	width:50px;
+}
+
+/* 色の値セル */
+.colorValueCell {
+	text-align: right;
+	padding: 0px 5px 0px;
+}
+
+/* 登録データエリア */
+#registDataArea {
+	width: 400px;
+	float: left
+}
+
+/* 色設定名エリア */
+#colorNameArea {
+	width: 400px;
+	height:50px;
+}
+
+/* 光量設定エリア */
+#colorDutyArea {
+	width: 400px;
+	height: 120px;
+}
+
+#colorPpfdArea{
+	width: 400px;
+	height: 120px;
+}
+
+/* 点灯試験用データエリア */
+#ledTestArea {
+	width: 500px;
+	float: left;
+	margin-top: 53px;
+}
+
+#shelfTableArea {
+	width: 180px;
+	float: left;
+}
+
+#switchButtonArea {
+	margin-top: 22px;
+	width: 100px;
+	float: left;
+}
+
+/* 色設定名タイトル */
+.registTitleCell {
+	width:80px;
+}
+
+/* インプットボックス（光量・光量子量） */
+.colorValueInput {
+	size: 6;
+	text-align: right;
+}
+
+/* 光量テーブルのtd */
+.colorDutyTable td {
+	text-align: right;
+	padding: 0px 5px 0px;
+}
+
+/* 光量子量テーブルのtd */
+.colorPpfdTable td {
+	text-align: right;
+	padding: 0px 5px 0px;
+}
+
+/* LEDテスト用棚テーブルのtd */
+.testShelfTable td {
+	text-align: right;
+	padding: 0px 5px 0px;
+}
+
+/**********************************/
+/*** 生育モニタ（ブロック）設定 ***/
+/**********************************/
+
+/* 左エリア */
+#leftSideMon {
+	padding: 0px 5px;
+	width: 650px;
+	float:left;
+}
+
+/* 右エリア */
+#rightSideMon{
+	float: left;
+	width: 360px;
+	margin-top: 28px;
+	padding: 0px 0px;
+}
+
+.shelfTab {
+	width: 60px;
+}
+
+/* link action */
+.link:hover, .link:focus,.link:visited{
+	background: cyan;
+	cursor: pointer;
+}
+
+
+
+
+/* ブロックの列 */
+.blockCol {
+	width: 160px;
+}
+
+/* ブロックテーブルのセル */
+.blockTable td {
+	height: 80px;
+	padding: 5px 10px;
+	background: pink;
+}
+
+/* ボトルの列 */
+.bottleCol{
+	width: 90px;
+}
+
+
+/**********************************/
+/*** ブロック情報詳細設定 ***/
+/**********************************/
+
+/* 左エリア */
+#leftSideBlk {
+	padding: 0px 5px;
+	width: 550px;
+	float:left;
+}
+
+/* 右エリア */
+#rightSideBlk{
+	float: left;
+	width: 460px;
+	padding: 0px 0px;
+	
+}
+
+/* ブロック基本情報エリア */
+#blkBasicInfo{
+	height: 70px;	
+}
+
+/* 棚番号テーブル */
+#shelfNumTable{
+	padding:0px 5px 0px 0px;
+	float:left;
+}
+
+/* 棚列テーブル */
+#shelfColTable{
+	padding:0px 5px 0px;
+	float:left;
+}
+
+/* 棚行テーブル */
+#shelfRowTable{
+	padding:0px 5px 0px;
+	float:left;
+}
+
+/* 棚番号タイトル列 */
+.shelfNoTitleCol{
+	width:80px;
+}
+
+/* 棚番号データ列 */
+.shelfNoDataCol{
+	width:40px;
+}
+
+/* 棚列タイトル列 */
+.shelfColTitleCol{
+	width:40px;
+}
+
+/* 棚列データ列 */
+.shelfColDataCol{
+	width:30px;
+}
+
+/* 棚行タイトル列 */
+.shelfRowTitleCol{
+	width:40px;
+}
+
+/* 棚行データ列 */
+.shelfRowDataCol{
+	width:30px;
+}
+
+/* LED設定履歴エリア */
+#ledSetHistory{
+	height: 150px;	
+}
+
+/* 設定名列 */
+.settingNameCol{
+	width: 200px;
+}
+
+/* 日時列 */
+.dateTimeCol{
+	width: 140px;
+}
+
+/* LED状態列 */
+.ledStatusCol{
+	width: 80px;
+}
+
+/* ボトル番号列 */
+.bottleNumCol{
+	width: 80px
+}
+
+/* ブロック環境情報エリア */
+#blkEnvInfo{
+	height: 270px;
+}
+
+/* ブロック環境情報タイトル */
+#blkEnvInfoTitle{
+	height: 25px;
+}
+
+/* ブロック環境情報グラフエリア */
+#blkEnvGraph{
+	height: 225px;
+	margin-right:50px;
+	
+}
+
+/* ブロック写真エリア */
+#blkPictures{
+	height: 700px;
+}
+
+/* ブロック写真タイトル */
+#blkPicturesTitle{
+	height: 25px;
+}
+
+/* ブロック写真データ */
+#
+
+{
+	height: 675px;
+	background:#9CF;
+	margin-right:50px;
+}
+
+/* ボトル配置情報エリア */
+#btlPlaceInfo{
+	height: 490px;
+}
+
+/* ブロック環境情報履歴エリア */
+#blkEnvInfoHistory{
+	height:570px;
+}
+
+/* ブロック環境情報履歴タイトル */
+#blkEnvInfoHistoryTitle{
+	height: 25px;
+}
+
+/* 植物名列 */
+.plantNameCol{
+	width: 180px;
+}
+
+/* 温度列 */
+.tempCol{
+	width:60px;
+}
+
+/* 湿度列 */
+.humiCol{
+	width:60px;
+}
+
+/* 環境状態列 */
+.envStatusCol{
+	width: 80px;
+}
+
+
+/**********************************/
+/*** ブロック情報詳細設定 ***/
+/**********************************/
+
+/* 左エリア */
+#leftSideBLed {
+	padding: 0px 5px;
+	width: 780px;
+	float:left;
+}
+
+/* 右エリア */
+#rightSideBLed{
+	float: left;
+	width: 230px;
+	margin-top: 95px;
+	padding: 0px 0px;
+}
+
+#updateButtonBled{
+	width:230px;
+	text-align: right;
+}
+
+.seqCol{
+	width: 40px;
+}
+
+.ledTimeNameCol{
+	width:70px;
+}
+
+.ledTimeCol{
+	width:70px;
+}
+
+.ledChangeCol{
+	width:60px;
+}
+
+.registTitleBledCol{
+	width:110px;
+}
+
+.registDataBledCol{
+	width:120px;
+}
+
+
+/*************************************/
+/***  生育環境モニタ（培養ボトル） ***/
+/*************************************/
+
+/* メッセージエリア（生育環境モニタ（培養ボトル） */
+#messageAreaGM {
+	width: 250px;
+	height: 60px;
+	float: left;
+}
+
+/* 検索エリア（生育環境モニタ（培養ボトル） */
+#searchAreaGM {
+	width: 420px;
+	float: left;
+}
+
+/* 棚検索エリア */
+#shelfSearch{
+	width:100px;
+	float:left;
+}
+
+/* 棚検索タイトルエリア */
+#shelfSearchTitle{
+	width:30px;
+	float:left;
+}
+
+/* ブロック列検索エリア */
+#blockColSearch{
+	width:150px;
+	float:left;
+}
+
+/* ブロック列検索タイトルエリア */
+#blockColSearchTitle{
+	width:100px;
+	float:left;
+}
+
+/* ブロック行検索エリア */
+#blockRowSearch{
+	width:150px;
+	float:left;
+}
+
+/* ブロック行検索タイトルエリア */
+#blockRowSearchTitle{
+	width:100px;
+	float:left;
+}
+
+/* 植物名検索エリア */
+#plantSearch{
+	width:240px;
+	clear:both;
+	float:left;
+}
+
+/* 植物名検索タイトルエリア */
+#plantSearchTitle{
+	width:70px;
+	float:left;
+}
+
+/* 状態検索エリア */
+#statusSearch{
+	width:160px;
+	float:left;
+}
+
+/* ブロック行検索タイトルエリア */
+#statusSearchTitle{
+	width:50px;
+	float:left;
+}
+
+.shelfNameCol{
+	width:60px;
+}
+
+/* 棚列タイトル列 */
+.blockColDataCol{
+	width:30px;
+}
+
+/* 棚行データ列 */
+.blockRowDataCol{
+	width:30px;
+}
+
+/* ボトル状態列 */
+.bottleStatusCol{
+	width: 80px;
+}
+
+/* 日付列 */
+.dateCol{
+	width:100px;
+}
+
+/* 備考列（生育環境モニタ培養ボトル）*/
+.memoGMCol{
+	width:380px;
+}
+
+
+/***************************/
+/***  培養ボトル情報詳細 ***/
+/***************************/
+
+/* ボトル基本情報エリア */
+#btlBasicInfo{
+	height: 70px;	
+}
+
+/* ボトル番号テーブル */
+#btlNumTable{
+	padding:0px 5px 0px 0px;
+	float:left;
+}
+
+/* ボトル番号タイトル列 */
+.bottleNoTitleCol{
+	width: 80px;
+}
+
+/* 植物名テーブル */
+#plantNameTable{
+	padding:0px 5px 0px;
+	float:left;
+}
+
+/* 植物名タイトル列 */
+.plantNameTitleCol{
+	width: 60px;
+}
+
+/* 状態テーブル */
+#bottleStatusTable{
+	padding:0px 5px 0px;
+	float:left;
+}
+
+/* 状態タイトル列 */
+.bottleStatusTitleCol{
+	width: 50px;
+}
+
+#btlBlkHistory{
+	margin-bottom:10px;
+}
+
+/* 培養ボトルLED照射情報 */
+#btlLedIrrTable{
+	margin-bottom:10px;
+}
+
+/* 点灯時間列 */
+.IrrTimeCol{
+	width:150px;
+}
+
+/* 備考（培養ボトル情報詳細） */
+.memoBDCol{
+	width:150px;
+}
+
+
+#blkEnvInfoHistoryDetail{
+	height:330px;
+	margin-bottom:10px;
+}
+
+#blkEnvInfoHisTitle{
+	width:700px;
+	float: left;
+	height:25px;
+}
+
+#blkEnvInfoHisSearch{
+	float:left;
+	width:300px;
+	height:25px;
+}
+
+#blkEnvInfoHistoryLeft{
+	width:360px;
+	float:left;
+	height:305px;
+}
+
+#blkEnvInfoHistoryRight{
+	width:520px;
+	height:305px;
+	float:left;
+}
+
+#blkEnvInfoHisGraph{
+	width:520px;
+	height:305px;
+	background:#FF9;
+}
+
+#btlPhotoList{
+	clear:both;
+	height:330px;
+}
+
+#btlPhotoListTable{
+	float:left;
+	width:400px;
+}
+
+#photoData{
+	width:520px;
+	height:305px;
+	background:#FF9;
+	float:left;
+}
+
+
+/***************************/
+/***  培養ボトル情報登録 ***/
+/***************************/
+
+#bottleBasicInfo{
+	width:380px;
+	height:180px;
+	float:left
+}
+
+#btlPlacementTable{
+	width:300px;
+	height:180px;
+	float:left
+}
+
+.btlRegistTitleCol{
+	width:100px;
+}
+
+.btlResistLeftDataCol{
+	width:160px;
+}
+
+.btlResistRightDataCol{
+	width:60px;
+}
+
+/*pointer effect*/
+.pointer{
+	cursor: pointer;
+}
+
+/*3.9.2014 Khin Sabal Han */
+.tabdeleteunderline
+{
+	text-decoration: none;
+}
+.shelfTab a{
+       text-decoration: none;
+}
+.photoformatsize
+{
+	width: 400px;
+	height: 300px;
+}
+/*24.9.2014 */
+.scrollTable
+{
+	float: left;
+	max-height: 242px;
+	overflow-y: auto;
+	width: 87.5%;
+}
+
+.measuredegreeCol
+{
+	width: 80px;
+}
+.measureluxCol
+{
+	width: 80px;
+}
+.targetstate
+{
+	width: 84px;
+}
+/* khin sabal han */
