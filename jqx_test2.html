@@ -16,6 +16,9 @@
 <script src="scripts/jquery-2.0.2.min.js"></script>
 <script src="scripts/calendar_script.js"></script>
 <script>
-	$('#cal_container').create_table();
+	$('#cal_container').create_table({
+		day : "short"
+	});
+	console.log($('#cal_container').create_table("date"));
 </script>
 </html>

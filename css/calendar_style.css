@@ -99,14 +99,14 @@
 }
 
 .cal_dates_row{
-	height: 150px;
+	height: 140px;
 }
 
 .cal_dates{
 	width:13.8%;
-	height: 150px;
+	height: 140px;
 	float: left;
-	background:rgb(143, 192, 213);
+	background:#71A9F0;
 	margin: .2%;
 	overflow: auto;
 	border-radius: 3px;
@@ -114,7 +114,7 @@
 }
 
 .selected{
-	background-color: rgb(113, 169, 240);
+	background-color: #8BD6FA;
 }
 
 .date_content{
@@ -125,6 +125,7 @@
 	margin-top:8px;
 	font-family: Georgia;
 	font-size: 1.5em;
+	margin-bottom: 17px;
 }
 
 .data_content{
@@ -142,7 +143,7 @@
 }
 
 .prev_month_container, .next_month_container{
-	background: rgb(166, 194, 206);
+	background: #E4EBEE;
 	opacity: .5;
 }
 
@@ -231,26 +232,25 @@
 	overflow: hidden;
 	margin: 0 auto;
 	text-align: left;
-	font-size: 15px;
-	font-family: Times New Roman;
+	font-size: 13px;
+	font-family: Arial;
 	text-indent: 5px;
 	line-height: 1.7em;
-	border-radius: 2px;
-	margin-top: 5px;
+	margin-top: 10px;
 	color:#fff;
-	border:1px solid #0A4B88;
+	/* border:1px solid #0A4B88; */
 }
 
 .leave{
-	background-color: #0A4B88;
+	background-color: #F06767;
 }
 
 .morning_leave{
-	background-image: linear-gradient(to right,#0A4B88 50%, transparent 52%);
+	background-image: linear-gradient(to right,#F06767 50%, transparent 50%);
 }
 
 .evening_leave{
-	background-image: linear-gradient(to right, transparent 50%, #0A4B88 52%);
+	background-image: linear-gradient(to right, transparent 50%, #F06767 50%);
 }
 
 .cal_dates::-webkit-scrollbar,.overlay_content::-webkit-scrollbar {
@@ -278,6 +278,7 @@
 	position: fixed;
 	top:0;
 	left:0;
+	z-index: 99;
 	/* display: none; */
 }
 
@@ -287,8 +288,9 @@
 	height: 300px;
 	border-radius: 4px;
 	margin:0 auto;
-	background: rgb(143, 192, 213);
+	background: #71A9F0;
 	overflow: auto;
 	cursor: pointer;
 	border:5px solid #fff;
+	z-index: 9999;
 }

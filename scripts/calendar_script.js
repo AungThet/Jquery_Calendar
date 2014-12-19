@@ -1,19 +1,41 @@
 (function($){
-$.fn.create_table=function (){
-	var date = new Date();
-	var selected = new Date().getDate();
-	var position = 0;
-	var w_height = $(window).height();
-	var buffer = null;
+	$.fn.create_table=function (option){
+		var date = new Date();
+		if(option=="date"){
+			var result = new Date(getDate());
+			var pre = getDate().getMonth();
+			var num_of_date = $('.selected').parents('.cal_dates_row').index();
+			result.setDate(num_of_date);
+			return(result.getDate()+"-"+(result.getMonth()+1)+"-"+result.getFullYear());		 
+		}
+		else{
+			var setting = $.extend(
+			{
+				day: "long",
+				size: ""
+			}
+			,$.fn.create_table.default,option);
+			var day_type=setting.day;
+			var size  = setting.size;
+			var container = $(this);	
+			var selected = new Date().getDate();
+			var position = 0;
+			var w_height = $(window).height();
+			var buffer = null;
 
-	function create_header(){
-		var cal_header = $("<div>", {class: "cal_header"});
-		var cal_header_content = $("<div>",{class:"cal_header_content"});
-		var header_content = $("<div>",{class:"header_content"});
-		var cal_header_month = $("<div>",{class:"cal_header_month header_content_position"});
-		var cal_header_year = $("<div>",{class:"cal_header_year header_content_position"});
-		var prev_button = $("<div>",{class:" prev_button button_size fa fa-reply"});
-		var next_button = $("<div>",{class:" next_button button_size fa fa-mail-forward"});
+			container.css(
+			{
+				'width' : size,
+				'z-index': 9
+			});
+			function create_header(){
+				var cal_header = $("<div>", {class: "cal_header"});
+				var cal_header_content = $("<div>",{class:"cal_header_content"});
+				var header_content = $("<div>",{class:"header_content"});
+				var cal_header_month = $("<div>",{class:"cal_header_month header_content_position"});
+				var cal_header_year = $("<div>",{class:"cal_header_year header_content_position"});
+				var prev_button = $("<div>",{class:" prev_button button_size fa fa-reply"});
+				var next_button = $("<div>",{class:" next_button button_size fa fa-mail-forward"});
 			//header...........
 			header_content.append(cal_header_month,cal_header_year);
 			cal_header_content.append(header_content);
@@ -56,14 +78,21 @@ $.fn.create_table=function (){
 				else{
 					cal_date.append(cal_dates_row.clone());
 				}
-
 			});
 
 			return cal_date;
 		}
 
 		function fill_cal_title(){
-			var days= ['Sunday','Monday','Tuesday','Wednesday','Thursday','Friday','Saturday'];
+			var days;
+			if(day_type=="short")
+			{
+				days= ['Sun','Mon','Tue','Wed','Thu','Fri','Sat'];
+			}
+			else if(day_type=="long"){
+				days= ['Sunday','Monday','Tuesday','Wednesday','Thursday','Friday','Saturday'];
+			}
+			
 			$('.cal_days').each(function(index){
 				$(this).text(days[index]);
 			});
@@ -84,7 +113,7 @@ $.fn.create_table=function (){
 			current_month.append(cal_content);
 
 			//container...............
-			$('#cal_container').append(create_header(),cal);
+			container.append(create_header(),cal);
 
 			//fill calendar title (Sunday ,Monday, ...)
 			fill_cal_title();
@@ -92,7 +121,6 @@ $.fn.create_table=function (){
 		}
 
 		function create_year(){
-
 			//get header
 			var year_container = $('<div>',{class:'year_container'});
 			var year_row = $('<div>',{class:'year_row'});
@@ -110,49 +138,64 @@ $.fn.create_table=function (){
 		}
 
 		initialize();
-		operate_2(getDate());		
-		do_click(getDate());
+
+		$(document).ready(function(){	
+			operate_2(getDate());		
+			do_click(getDate());
+		});
 
 		function clear(){
-			$('#cal_container').html('');
+			container.html('');
 		}
 
 		function year_title_content(got_year){
+
+			//check year not to be beyond 2100 yrs
 			if(got_year>2089){
 				got_year = 2089;
 			} 
+
+			// append years to year div
 			$('.years').each(function(index){
 				$(this).text(got_year+index);
 			});
 
+			//append gap year in header
 			$('.header_content').html(got_year+" - "+(got_year+11));
-			date.setYear(got_year);
+
+			//set current year to operation date
+			getDate().setYear(got_year);
 		}
 
 		function month_title_content(got_year){
+
+			//append month name to month div
 			$('.months').each(function(index){
 				$(this).text(GetMonthName(index+1));
 			});
-
+			//append current year to header
 			$('.header_content').html(got_year);
 		}
 
 		function create_month(){
-			//get header
+			
 			var month_container = $('<div>',{class:'month_container'});
 			var month_row = $('<div>',{class:'month_row'});
 			var months = $('<div>',{class:'months'});
 
+			//create row with month div
 			$.each(new Array(4),function(){
 				month_row.append(months.clone());
 			});
 
+			//create month container with month row
 			$.each(new Array(3),function(){
 				month_container.append(month_row.clone());
 			});
 
 			return month_container;
 		}
+
 
 		function month_operate(got_year){
 
@@ -162,7 +205,7 @@ $.fn.create_table=function (){
 			var header = create_header();
 			var created_month = create_month();
 			
-			$('#cal_container').append(header,created_month);
+			container.append(header,created_month);
 			
 			month_title_content(month_buffer);	
 
@@ -192,7 +235,7 @@ $.fn.create_table=function (){
 				var header = create_header();
 				var created_year = create_year();
 
-				$('#cal_container').append(header,created_year);
+				container.append(header,created_year);
 
 				var got_year = getDate().getFullYear();//parseInt($(this).text());
 				year_title_content(got_year);	
@@ -218,7 +261,7 @@ $.fn.create_table=function (){
 				$('.years').click(function(){
 					year_to_operate = getDate().getFullYear()+$(this).parent('.year_row').index()*4+$(this).index();//parseInt($(this).text());
 					month_operate(year_to_operate);
-					date.setYear(year_to_operate);
+					getDate().setYear(year_to_operate);
 				});
 
 			});
@@ -236,7 +279,6 @@ $('.months').click(function(){
 				initialize();
 				operate_2(m_date);
 				do_click(getDate());
-
 			});
 
 $('.header_content').addClass('cursor');
@@ -288,7 +330,7 @@ function operate_2(operate_date){
 				tag.text('Chan Myae San Hlaing');
 				tag2.text('Sis Min Maw');
 				tag3.text('Aung Thet Win');
-				$(this).append(tag,tag2,tag3,tag.clone());
+				$(this).append(tag,tag2,tag3);
 
 			}
 			if(increament==getSelected() && !is_next_month){
@@ -312,13 +354,12 @@ function operate_2(operate_date){
 
 setDate(operate_date);
 scrollPos();
-adjustAll();
 }
 
 function scrollPos(){
-	setTimeout(function(){
-		//$(window).scrollTop($('.selected').offset().top-120);
-	},500);
+	/*setTimeout(function(){
+		$(window).scrollTop($('.selected').offset().top-120);
+	},500);*/
 }
 
 
@@ -366,8 +407,8 @@ function do_click(d_date){
 		var year_to_operate,month_to_operate;
 		var header = create_header();
 		var created_year = create_year();
-		var header_buffer = new Date(d_date);
-		$('#cal_container').append(header,created_year);
+		var header_buffer = new Date(getDate());
+		container.append(header,created_year);
 
 		var got_year = header_buffer.getFullYear();
 		year_title_content(got_year);	
@@ -389,8 +430,9 @@ function do_click(d_date){
 		});
 
 		$('.years').click(function(){  
-			year_to_operate = parseInt($(this).text());
+			year_to_operate = getDate().getFullYear()+$(this).parent('.year_row').index()*4+$(this).index();//parseInt($(this).text());
 			month_operate(year_to_operate);
+			getDate().setYear(year_to_operate);
 		});
 
 	});
@@ -433,7 +475,7 @@ function do_click(d_date){
 		});
 		var overlay_content = $('<div>',{class:"overlay_content"});
 		overlay_content.bind('click',function(){
-			
+			//do function
 		});
 		close.bind('click',function(){
 			$('.overlay').remove();
@@ -462,18 +504,18 @@ function do_click(d_date){
 			'top' : top-$(window).scrollTop(),
 			'left' : left
 		})
-		/*.animate({
-			'left' : left+1
-		},100)
-		.animate({
-			'left' : left-1
-		},100)
 		.animate({
 			'left' : left+1
 		},100)
 		.animate({
 			'left' : left-1
-		},100)*/
+		},100)
+		.animate({
+			'left' : left+1
+		},100)
+		.animate({
+			'left' : left-1
+		},100)
 		.animate({
 			'width' : 350,
 			'height' : 300,
@@ -483,10 +525,11 @@ function do_click(d_date){
 	}
 }
 
+
 $('input[type=button]').click(function(){
 	var result = new Date(getDate());
 	result.setDate($('.selected').parent('.cal_dates_row').index()*7+$('.selected').index()-getDate().getDay()+1);
-	alert(result.getDate()+" - "+(result.getMonth()+1)+" - "+result.getFullYear());
+	return (result.getDate()+" - "+(result.getMonth()+1)+" - "+result.getFullYear());
 });
 
 $(window).resize(function(){
@@ -497,16 +540,28 @@ $(window).resize(function(){
 		},500);
 	}
 
-	if($(window).width()>700){
-		adjustAll();
+	if(container.width()>700){
+		adjustAll_2();
 	}
 	
 });
 
 function adjustAll(){
-	$('.cal_dates,.cal_dates_row').animate({
-		'height' : $('.cal_dates').width()
+	$('.cal_dates,.cal_dates_row').css({
+		'height' : $('.cal_dates').width()-8
 	});
 }
+
+
+function adjustAll_2(){
+	$('.cal_dates,.cal_dates_row').animate({
+		'height' : $('.cal_dates').width()-8
+	});
 }
+
+return this;
+}
+}
+
+
 })(jQuery);
